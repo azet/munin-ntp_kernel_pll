@@ -1,2 +1,4 @@
-missing precision and frequency tolerance graphing plugins for munin-monitoring
-see: http://www.ntp.org/ntpfaq/NTP-s-algo-kernel.htm
+missing NTP kernel PLL precision and frequency tolerance graphing plugins for munin-monitoring
+based on the ntp_kernel_pll_freq plugin, shipped with the default munin distribution
+
+see also: http://www.ntp.org/ntpfaq/NTP-s-algo-kernel.htm
