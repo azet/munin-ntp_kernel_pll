@@ -15,7 +15,7 @@ No configuration
 =head1 AUTHORS
 
 Original authors unknown
-ntp_kernel_pll_prec patched for PLL precision support by azet@azet.org
+ntp_kernel_pll_freq patched for PLL precision support by azet@azet.org
 
 =head1 LICENSE
 
