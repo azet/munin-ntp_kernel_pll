@@ -52,6 +52,5 @@ if [ "$1" = "config" ]; then
     echo 'ntp_pll_prec.info Phase-locked loop precision in seconds'
     exit 0
 fi
-
-echo -n 'ntp_pll_prec.value '
-ntpdc -c kern | awk '/^precision:/ { print $2 }'
+CALL=`ntpdc -c kern | awk '/^precision:/ { print $2 }'`
+printf "ntp_pll_prec.value %.23f" ${CALL} ; echo
