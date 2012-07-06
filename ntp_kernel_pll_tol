@@ -35,7 +35,7 @@ None known
 EOF
 
 if [ "$1" = "autoconf" ]; then
-    ntpdc -c kern 2>/dev/null | 
+    { ntpq -c kerninfo; ntpdc -c kerninfo; } 2>/dev/null | 
     awk 'BEGIN { ev=1; }
          /^frequency tolerance:/ { ev=0; } 
          END { if (ev == 0) { print "yes";} else { print "no"; } exit ev; }'
@@ -54,4 +54,4 @@ if [ "$1" = "config" ]; then
 fi
 
 echo -n 'ntp_pll_tol.value '
-ntpdc -c kern | awk '/^frequency tolerance:/ { print $3 }'
+{ ntpq -c kerninfo; ntpdc -c kerninfo; } 2>/dev/null | awk '/^frequency tolerance:/ { print $3 }'
